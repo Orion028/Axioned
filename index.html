@@ -106,10 +106,32 @@
         <div class="test__header">
             <h2>Testimonials</h2>
             <hr>
-        </div>
-        <div class="test__content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in ea similique autem ut provident, cupiditate dolorem quis neque ullam qui voluptas nesciunt, culpa omnis maxime laudantium cumque ab unde.</p>
-            <p>-John DOE, Parker County, TX</p>
+        </div> 
+        <div class="slider__ctn">
+            <div class="test__content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in ea similique autem ut provident, cupiditate dolorem quis neque ullam qui voluptas nesciunt, culpa omnis maxime laudantium cumque ab unde.</p>
+                <p>-John DOE, Parker County, TX</p>
+            </div>
+            <div class="test__content">
+                <p>Anim magna fugiat eiusmod excepteur ullamco laborum minim ullamco nostrud labore occaecat Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, fuga.</p>
+                <p>-John DOE, Parker County, TX</p>
+            </div>
+            <div class="test__content">
+                <p>Qui amet officia occaecat Lorem enim Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, saepe Lorem ipsum dolor sit.</p>
+                <p>-John DOE, Parker County, TX</p>
+            </div>
+            <div class="test__content">
+                <p>Laboris magna do culpa commodo laborum velit laboris sit esse officia Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quaerat Lorem ipsum dolor sit.</p>
+                <p>-John DOE, Parker County, TX</p>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="dot-ctn">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
         </div>
     </section>
     <section id="contact" class="contact__ctn">
@@ -156,5 +178,34 @@
         </div>
         <p>&copy;2016 Landscaper. Designed by <span>TemplateWire</span></p>
     </footer>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n){
+            showSlides(slideIndex += n);
+        }
+        function currentSlide(n){
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n){
+            var i;
+            var slides = document.getElementsByClassName("test__content");
+            var dots = document.getElementsByClassName("dot");
+            if(n > slides.length){
+                slideIndex = 1;
+            }
+            if(n < 1){
+                slideIndex = slides.length;
+            }
+            for(i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+            for(i = 0; i < dots.length; i++ ){
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
 </body>
 </html>
