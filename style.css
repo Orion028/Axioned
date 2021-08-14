@@ -575,6 +575,9 @@ footer {
   background-color: #464646;
   color: var(--green);
 }
+#icon:hover {
+  color: white;
+}
 footer p {
   color: gray;
 }
