@@ -187,9 +187,19 @@ header {
   color: lightgray;
   font-weight: 300;
   font-size: 0.6em;
+  transition: all 0.3s linear 0s;
 }
 .nav li a:hover {
   color: var(--green);
+}
+#check {
+  display: none;
+}
+.menu__btn {
+  font-size: 25px;
+  color: white;
+  display: none;
+  cursor: pointer;
 }
 .banner__ctn {
   position: relative;
@@ -302,9 +312,10 @@ section {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  gap: 50px;
+  margin-left: 5em;
 }
 .about__card {
-  margin-left: 50px;
   box-sizing: border-box;
 }
 .about__card > img {
@@ -359,7 +370,7 @@ section {
 .service__card {
   box-sizing: border-box;
   width: 20vw;
-  height: 400px;
+  height: fit-content;
   text-align: center;
   color: white;
 }
@@ -410,7 +421,9 @@ section {
 }
 .gallery__btn ul {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 .gallery__btn li {
@@ -438,11 +451,10 @@ section {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 2em;
 }
 .gallery__img img {
-  width: 32%;
-  height: auto;
+  width: calc(33% - 20px);
 }
 .test__ctn {
   width: 100%;
@@ -648,4 +660,161 @@ footer p {
 }
 footer span {
   color: lightgrey;
+}
+@media (max-width: 1200px) {
+  .service__card__ctn {
+    flex-direction: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .service__card {
+    width: calc(50% - 30px);
+  }
+}
+@media (max-width: 900px) {
+  a {
+    font-size: 0.8em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.2em;
+  }
+  header {
+    width: 100%;
+    padding: 20px 20px;
+  }
+  .banner__content h1 {
+    font-size: 3em;
+  }
+  .nav {
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    top: 0;
+    text-align: center;
+    transition: all 0.5s;
+    right: -100%;
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+  }
+  .nav li {
+    display: block;
+    line-height: 50px;
+  }
+  .nav li a {
+    font-size: 20px;
+  }
+  .menu__btn {
+    display: block;
+  }
+  #check:checked ~ .nav {
+    right: 0;
+  }
+  section {
+    padding: 40px;
+  }
+  .about__ctn {
+    flex-direction: column;
+  }
+  .about__content {
+    margin-bottom: 50px;
+  }
+  .about__card__ctn {
+    margin-left: 0;
+  }
+  .test__content {
+    padding: 0 10px;
+  }
+  .prev {
+    left: -40px;
+  }
+  .next {
+    right: -40px;
+  }
+  .contact__header {
+    text-align: center;
+  }
+  footer {
+    padding: 40px;
+  }
+}
+@media (max-width: 700px) {
+  .banner__content h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  p {
+    font-size: 0.8em;
+  }
+  a {
+    font-size: 0.8em;
+  }
+  .nav {
+    width: 100%;
+  }
+  .btn {
+    font-size: 0.8em;
+  }
+  .about__card__ctn {
+    flex-direction: column;
+  }
+  .about__card img {
+    width: 100%;
+  }
+  .service__card__ctn {
+    flex-direction: column;
+  }
+  .service__card {
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gallery__btn li {
+    margin-bottom: 20px;
+  }
+  .gallery__btn li a {
+    font-size: 0.6em;
+    padding: 5px 10px;
+  }
+  .gallery__img {
+    flex-direction: column;
+  }
+  .gallery__img img {
+    width: 100%;
+  }
+  .contact__info {
+    flex-direction: column;
+  }
+  .contact__info__content {
+    margin-bottom: 30px;
+  }
+  .contact__form .text {
+    width: 100%;
+  }
+  .contact__form textarea {
+    width: 100%;
+  }
+}
+@media (min-width: 1500px) {
+  header {
+    padding: 20px 200px;
+  }
+  section {
+    padding: 200px;
+  }
 }
